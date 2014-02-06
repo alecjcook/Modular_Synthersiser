@@ -9,6 +9,8 @@
 #define midiSwitchPin 2
 #define cvPot A0
 #define sweepSwitchPin 3
+#define portamentoPin 7
+#define arpeggiatorPin 8
 int oldNote;            // this is the last value that we did set
 int newNote;            // this is the value we want to set
 int noteCount;          // here we will count how many notes we have pressed at any one time
@@ -58,6 +60,8 @@ void setup() {
   pinMode(cvPot, INPUT);            // configure the pot to be an input
   pinMode(midiSwitchPin, INPUT);    // configure the midi switch to be an input
   pinMode(sweepSwitchPin, INPUT);   // configure the sweepSwitch io be an input
+  pinMode(portamentoPin, INPUT);    // configure the portamento pin to be an input
+  pinMode(arpeggiatorPin, INPUT);   // configure the arpegiator pin to be an input
   digitalWrite(clockPin, LOW);      // Here we write the clock pin to be low
   digitalWrite(latchPin, LOW);      // Here we set the latch high to tell the device we dont need it
   oldNote = 0;                      // the last value we set at this point is invalid, so we set this to 0
